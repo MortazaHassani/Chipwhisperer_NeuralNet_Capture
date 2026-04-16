@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Thu Apr 16 15:55:13 2026
+# Process ID         : 3780
+# Current directory  : /home/m/chipwhisperer/vivado_projects/test2/test2
+# Command line       : vivado
+# Log file           : /home/m/chipwhisperer/vivado_projects/test2/test2/vivado.log
+# Journal file       : /home/m/chipwhisperer/vivado_projects/test2/test2/vivado.jou
+# Running On         : ubuntu2
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : Intel(R) Core(TM) Ultra 9 285
+# CPU Frequency      : 2495.998 MHz
+# CPU Physical cores : 2
+# CPU Logical cores  : 2
+# Host memory        : 14512 MB
+# Swap memory        : 0 MB
+# Total Virtual      : 14512 MB
+# Available Virtual  : 13306 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/m/chipwhisperer/vivado_projects/test2/test2/test2.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+report_utilization -hierarchical_min_primitive_count 50 -name utilization_1
+refresh_design
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
